@@ -1,5 +1,5 @@
 # Cohens-d-replication
-This repository contains all files that are needed to reproduce the findings that were presented in the paper "Replication of Cohen's d: Quantifying Evidence using the Bayes Factor". The repository contains the following files:
+This repository contains all files that are needed to reproduce the findings that were presented in the paper "Replication of Cohen's d: Quantifying Evidence using the Bayes Factor". Please contact Millitza D. Kroonenberg (millitza@gmail.com) or prof. dr. Herbert J. A. Hoijtink (h.hoijtink@uu.nl) if you have any questions related to this repository. The repository contains the following files:
 ## function.R
 This R file contains annotated code that can be used to replicate the findings in the paper. The code contains the two functions as described in manualRfunction.pdf. For users who are unfamiliar with R there is an application with user interface available (see folder Application).
 ## manualRfunction.pdf
