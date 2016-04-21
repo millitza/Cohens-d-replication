@@ -8,7 +8,7 @@ This manual contains information on the functions that were used in the paper an
 This R file can be run to acquire the exact results as presented in the paper (sections "Evidence for replication of Cohen's d" and "Data example"). The seed numbers that were used are also specified within this function file.
 
 ## Application (folder)
-This folder contains the files that are needed to calculate Bayes factors that quantify effect size replication evidence in an online application with user interface.
+This folder contains the files that are needed to calculate Bayes factors that quantify effect size replication evidence in an online application with user interface. Note that you must save the folder "Application" and store the file "function.R" in the root-folder.
 ### manualShiny.pdf
 This manual describes how to use the Shiny application in more detail. Users that are more advanced in using R or want more options are encouraged to use the R function.
 ### ui.R
