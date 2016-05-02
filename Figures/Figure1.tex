@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\node at (2.5,4.5) {\small $\pi(\mu_1)=N(0,10000)$};
+\node at (2.5,4) {\small $\pi(\delta_{orig})=N(0,10000)$};
+\node at (2.5,3.5) {\small $\pi(\sigma^2)=\Gamma^{-1}(0.001,0.001)$};
+\node [left] at (0,3) {Original data};
+\draw [-{>[length=1.5mm]}] (0,3) -- (5,3);
+\node [right] at (5,3) {$\bar{\delta}_{orig}$, \hfill $\gamma^2$};
+\draw [decorate,decoration={brace,amplitude=5pt,mirror},yshift=-10](5,3)--(6.5,3);
+\draw [-{>[length=1.5mm]}] (5.745,2.5)--(5.745,1.9);
+\node [left] at (0,1) {Replication data};
+\node at (2.5,2) {\small $\pi(\mu_1)=N(0,10000)$};
+\node [right] at (5,1.5) {\small $\pi(\delta_{repl}|H_k)$};
+\node at (2.5,1.5) {\small $\pi(\sigma^2)=\Gamma^{-1}(0.001,0.001)$};
+\draw [-{>[length=1.5mm]}] (0,1) -- (8,1);
+\node [right] at (8,1) {BF$_{12}$, BF$_{13}$};
+\end{tikzpicture}

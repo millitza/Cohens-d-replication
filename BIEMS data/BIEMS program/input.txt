@@ -1,0 +1,19 @@
+DV	#groups	#cov	iseed	generate exact data
+1	2	0	864	1
+
+group sizes
+20	20
+
+standard deviations for the error terms
+1
+
+correlation matrix for the error terms
+1
+
+mean parameter matrix
+0
+0
+
+means for normal covariates per group
+
+covariance matrices for normal covariates per group

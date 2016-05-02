@@ -15,7 +15,7 @@ BIEMSdata <- lapply(BIEMSdata, BIEMSdataprep)
 
 ### STEP 3: CALCULATE BAYES FACTORS FOR EACH COMBINATION OF DATA SETS UNDER 3 CONDITIONS (PHI)
 # specify values for phi and original data sets
-phiset <- c(.2,.5,.8)
+phiset <- c(.2,.35,.5,.8)
 datasetorig <- c("N20_d00","N40_d00","N100_d00")
 # calculate Bayes factors for all conditions under specified phi values and save objects in folder Workspace
 for (phi in phiset){
@@ -70,6 +70,10 @@ table <- matrix(unlist(lapply(outputobjects,get)),ncol=6,byrow=T)
 colnames(table) <- c(expression(phi),"n_orig","n_repl",expression(delta),"BF_12","BF_13")
 table <- table[order(table[,1],table[,2],table[,3],table[,4]),]
 
+# plot prior distributions for phi=0.2, n_orig=40,100
+plot_prior(BF_origN40_d00_replN40_d00_phi0.2)
+plot_prior(BF_origN100_d00_replN40_d00_phi0.2)
+
 #### DATA EXAMPLE ####
 ### LOAD ALL DATA FILES AND PERFORM ANALYSES AS DISPLAYED IN TABLE 3 ###
 # onesided vs twosided
@@ -83,13 +87,9 @@ for(phi in phiset){
   assign(nameBFobject,BFobject)
 }
 
-plot_prior(dataexample_onesided_twosided_phi0.2)
-plot_prior(dataexample_onesided_twosided_phi0.5)
-plot_prior(dataexample_onesided_twosided_phi0.8)
-
 # neutral vs onesided
-example_orig_neutral_onesided <- read.table("Data example 2/Original study/Data_orig_neutral_onesided.txt",header=T)
-example_repl_neutral_onesided <- read.table("Data example 2/Replication study/Data_repl_neutral_onesided.txt",header=T)
+example_orig_neutral_onesided <- read.table("Data example/Original study/Data_orig_neutral_onesided.txt",header=T)
+example_repl_neutral_onesided <- read.table("Data example/Replication study/Data_repl_neutral_onesided.txt",header=T)
 
 for(phi in phiset){
   set.seed(39580)
@@ -98,13 +98,9 @@ for(phi in phiset){
   assign(nameBFobject,BFobject)
 }
 
-plot_prior(dataexample_neutral_onesided_phi0.2)
-plot_prior(dataexample_neutral_onesided_phi0.5)
-plot_prior(dataexample_neutral_onesided_phi0.8)
-
 # neutral vs twosided
-example_orig_neutral_twosided <- read.table("Data example 2/Original study/Data_orig_neutral_twosided.txt",header=T)
-example_repl_neutral_twosided <- read.table("Data example 2/Replication study/Data_repl_neutral_twosided.txt",header=T)
+example_orig_neutral_twosided <- read.table("Data example/Original study/Data_orig_neutral_twosided.txt",header=T)
+example_repl_neutral_twosided <- read.table("Data example/Replication study/Data_repl_neutral_twosided.txt",header=T)
 
 for(phi in phiset){
   set.seed(39580)
@@ -112,10 +108,6 @@ for(phi in phiset){
   nameBFobject <- paste0("dataexample_neutral_twosided_phi",phi)
   assign(nameBFobject,BFobject)
 }
-
-plot_prior(dataexample_neutral_twosided_phi0.2)
-plot_prior(dataexample_neutral_twosided_phi0.5)
-plot_prior(dataexample_neutral_twosided_phi0.8)
 
 ### effect size estimates as presented in Table 2 ###
 d_orig_one_two <- sampler_ESrepl(example_orig_onesided_twosided,prior=matrix(c(0,100,0,100,.001,.001),nrow=3,ncol=2,byrow=T),type="orig",d_diff=0)
