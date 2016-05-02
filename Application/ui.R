@@ -1,5 +1,5 @@
 shinyUI(navbarPage(
-  title = 'Effect size replication',
+  title = 'Replication of Cohen\'s d',
   tabPanel('Start',verticalLayout(
     fileInput("dataset_orig", "Upload your original data set"),
     fileInput("dataset_repl", "Upload your replication data set"),

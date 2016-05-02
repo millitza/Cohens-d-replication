@@ -24,10 +24,9 @@ shinyServer(function(input, output) {
   output$repldata <- DT::renderDataTable(DT::datatable(repldata(),options=list(paging=F,searching=F)))
   
   # set phi
-  phi <- reactive(input$phi_user)
-  
+  phi <- eventReactive(input$calc, {input$phi_user})
   # set iterations
-  iter <- reactive(input$iter_user)
+  iter <- eventReactive(input$calc, {input$iter_user})
   
   # calculate BFs
   BF_output <- reactive({
@@ -36,9 +35,8 @@ shinyServer(function(input, output) {
   })
   
   output$text1 <- renderUI({
-    
   text <- paste("The presented Bayes factors were calculated using",BF_output()$repl_H1$iterations,"iterations including a burn-in period of ",BF_output()$repl_H1$burnin," iterations. For the second hypothesis, this number of iterations is used for each normal distribution in the prior on the effect size. The set value for phi is",BF_output()$repl_H3$phi,".")
-  HTML(text)
+    HTML(text)
   })
   
   output$BFtable <- renderUI({
@@ -69,7 +67,6 @@ shinyServer(function(input, output) {
          dens_H3 <- dnorm(x,mean=(BF_output()$repl_H1$prior[2,1]),sd=sqrt((BF_output()$repl_H1$prior[2,2])^2+phi^2))
          lines(x,dens_H3,lty=2)
   })
-  
   
 
 })
