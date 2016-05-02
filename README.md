@@ -60,5 +60,5 @@ This is the official research report accompanying the replication attempt and da
 #### reconciling.for.repro.txt
 This data file was downloaded via https://osf.io/3xv8u/ and contained the data set of the replication study.
 
-## Figures
+## Figures (folder)
 This folder contains all files that were used to create the figures as presented in the paper.
