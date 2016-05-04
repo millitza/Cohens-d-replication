@@ -9,6 +9,8 @@ This is the manuscript of the paper "Replication of Cohen's d: Quantifying Evide
 ## reprod.R
 This R file can be run to acquire the exact results as presented in the paper (sections "Evidence for replication of Cohen's d" and "Data example: Mindset conditions and ambivalence"). The seed numbers that were used are also specified within this function file.
 
+## Additional analysis discussion (folder)
+This folder contains the files needed for the additional analysis as presented in the discussion section with n=600. The folder also contains dat files for n=250,500,750,800,1000. The result can be reproduced with the file additional_reprod.R. This file uses function2.R rather than function.R that was used for the main analyses, because the computational steps were slightly altered to accomodate the larger sample size.
 ## Application (folder)
 This folder contains the files that are needed to calculate Bayes factors that quantify effect size replication evidence in an online application with user interface. Note that you must save the folder "Application" and store the file "function.R" in the root-folder.
 ### manualShiny.pdf
